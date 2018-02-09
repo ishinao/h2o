@@ -113,10 +113,13 @@ static h2o_iovec_t durations_status_final(void *priv, h2o_globalconf_t *gconf, h
     " \"" x "-25\": %lu,\n"                                                                                                        \
     " \"" x "-50\": %lu,\n"                                                                                                        \
     " \"" x "-75\": %lu,\n"                                                                                                        \
+    " \"" x "-90\": %lu,\n"                                                                                                        \
+    " \"" x "-95\": %lu,\n"                                                                                                        \
     " \"" x "-99\": %lu\n"
 #define DURATION_VALS(x)                                                                                                           \
     gkc_query(agg_stats->stats.x, 0), gkc_query(agg_stats->stats.x, 0.25), gkc_query(agg_stats->stats.x, 0.5),                     \
-        gkc_query(agg_stats->stats.x, 0.75), gkc_query(agg_stats->stats.x, 0.99)
+        gkc_query(agg_stats->stats.x, 0.75), gkc_query(agg_stats->stats.x, 0.90), gkc_query(agg_stats->stats.x, 0.95),             \
+        gkc_query(agg_stats->stats.x, 0.99)
 
     ret.base = h2o_mem_alloc_pool(&req->pool, char, BUFSIZE);
     ret.len = snprintf(
