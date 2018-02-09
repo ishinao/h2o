@@ -14,3 +14,6 @@ xcuserdata
 misc/test-ca/demoCA/newcerts/*.pem
 tmp/
 /doc/workdir/
+
+.idea
+*.iml
